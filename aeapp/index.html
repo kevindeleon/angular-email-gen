@@ -1,46 +1,46 @@
 <!doctype html>
 <html ng-app="main">
-  <head>
-  	<base href="/aeapp/"/>
-    <script src="resources/vendor/js/angular.min.js"></script>
-    <script src="resources/vendor/js/ui-bootstrap-tpls-0.6.0.min.js"></script>
-    <script src="resources/js/main.js"></script>
-    <link href="resources/vendor/css/bootstrap.min.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container">
-      <div>
-        <label>Name:</label>
-        <input type="text" ng-model="yourName" placeholder="Enter a name here">
-        <hr>
-        <h1>Hello {{yourName}}!</h1>
-      </div>
-      <div ng-controller="AccordionDemoCtrl">
-        <label class="checkbox">
-          <input type="checkbox" ng-model="oneAtATime">
-          Open only one at a time
-        </label>
+<head>
+	<base href="/aeapp/"/>
+	<script src="resources/vendor/js/angular.min.js"></script>
+	<script src="resources/vendor/js/ui-bootstrap-tpls-0.6.0.min.js"></script>
+	<script src="resources/js/main.js"></script>
+	<link href="resources/vendor/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div>
+			<label>Name:</label>
+			<input type="text" ng-model="yourName" placeholder="Enter a name here">
+			<hr>
+			<h1>Hello {{yourName}}!</h1>
+		</div>
+		<div ng-controller="AccordionDemoCtrl">
+			<label class="checkbox">
+				<input type="checkbox" ng-model="oneAtATime">
+				Open only one at a time
+			</label>
 
-        <accordion close-others="oneAtATime">
-          <accordion-group heading="Static Header">
-            This content is straight in the template.
-          </accordion-group>
-          <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-            {{group.content}}
-          </accordion-group>
-          <accordion-group heading="Dynamic Body Content">
-            <p>The body of the accordion group grows to fit the contents</p>
-              <button class="btn btn-small" ng-click="addItem()">Add Item</button>
-              <div ng-repeat="item in items">{{item}}</div>
-          </accordion-group>
-          <accordion-group>
-              <accordion-heading>
-                  I can have markup, too! <i class="icon-check"></i>
-              </accordion-heading>
-              This is just some content to illustrate fancy headings.
-          </accordion-group>
-        </accordion>
-        </div>
-    </div>
-  </body>
+			<accordion close-others="oneAtATime">
+				<accordion-group heading="Static Header">
+					This content is straight in the template.
+				</accordion-group>
+				<accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+					{{group.content}}
+				</accordion-group>
+				<accordion-group heading="Dynamic Body Content">
+					<p>The body of the accordion group grows to fit the contents</p>
+					<button class="btn btn-small" ng-click="addItem()">Add Item</button>
+					<div ng-repeat="item in items">{{item}}</div>
+				</accordion-group>
+				<accordion-group>
+					<accordion-heading>
+						I can have markup, too! <i class="icon-check"></i>
+					</accordion-heading>
+					This is just some content to illustrate fancy headings.
+				</accordion-group>
+			</accordion>
+		</div>
+	</div>
+</body>
 </html>
