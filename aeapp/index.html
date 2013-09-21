@@ -1,7 +1,9 @@
 <!doctype html>
 <html ng-app="emailGen">
 <head>
-    <base href="/aeapp/"/>
+    <script>
+    document.write('<base href="' + document.location + '" />');
+    </script>
     <script src="vendor/js/angular.min.js"></script>
     <script src="vendor/js/ui-bootstrap-tpls-0.6.0.min.js"></script>
     <script src="js/app.js"></script>
@@ -12,19 +14,18 @@
 <body>
 <div ng-controller="MainCtrl">
     <div class="container">
-        <div class="navbar">
+        <div class="navbar" ng-controller="HeaderCtrl">
             <div class="navbar-inner">
                 <a class="brand" href="#">Admissions Email Generator</a>
                 <ul class="nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
+                    <li ng-class="{active: isActive('/')}"><a ng-href="#/">Build</a></li>
+                    <li ng-class="{active: isActive('/about')}"><a ng-href="#/about">About</a></li>
                 </ul>
             </div>
         </div> <!-- /nav-bar -->
 
-        <ng-view></ng-view>
-
+        <div ng-view></div>
+    
     </div> <!-- /container -->
 </div>
 </body>
