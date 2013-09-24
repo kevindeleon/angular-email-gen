@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style type="text/css">
+@media screen and (max-width: 560px) {
+    /*** Global template styles ***/
+    /* Keep iOS Mail from auto adjusting text-size */
+    html {
+        -webkit-text-size-adjust: none
+        }
+    /* Bump up default text size.
+               Any sizes specifically set by the user with Aloha aren't affected. */
+    *[class].mailer-content-block div.mailer-p-div, *[class].mailer-combo-block div.mailer-p-div, *[class].mailer-combo-content div.mailer-p-div, *[class].mailer-content-block li, *[class].mailer-combo-block li, *[class].mailer-combo-content li {
+        font-size: 15px !important
+        }
+    /* Set tables with specific width to 100% */
+    *[class].mobile-width {
+        width: 100% !important;
+        padding-left: 10px;
+        padding-right: 10px
+        }
+    *[class].mobile-width-nopad {
+        width: 100% !important
+        }
+    /* Stack Layout columns top to bottom, starting with the left most column. */
+    *[class].mobile-stack, *[class].mailer-layout-column-content, *[class].mailer-layout-column-sidebar, *[class].mailer-layout-column-sidebar-2, *[class].mailer-layout-column-sidebar-3 {
+        display: block !important;
+        width: 100% !important
+        }
+    /* Make images in Layouts fluid */
+    *[class].mailer-layout-column-content img, *[class].mailer-single-column-layout img, *[class].mailer-layout-column-sidebar img, *[class].mailer-layout-column-sidebar-2 img, *[class].mailer-layout-column-sidebar-3 img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto
+        }
+    /* Images are stacked and centered in all combo block layout instances.
+               Display:table keeps the placeholder images from rendering incorrectly. */
+    *[class].mailer-holder table, *[class].mailer-holder table td {
+        display: table !important;
+        float: none !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important
+        }
+    /* Center images in 1 column layout */
+    *[class].mailer-single-column-layout table {
+        float: none !important;
+        margin: 0 auto
+        }
+    *[class].mobile-hide {
+        display: none !important
+        }
+    *[class].mailer-unsubscribe span {
+        font-size: 12px !important
+        }
+    *[class].business_rsvp {
+        font-size: 12px !important
+        }
+    /*** Common classes ***/
+    *[class].social-sharing {
+        text-align: center !important;
+        padding-bottom: 10px
+        }
+    *[class].business_footer {
+        font-size: 18px !important;
+        text-align: center !important;
+        padding: 10px 0 !important
+        }
+    *[class].center {
+        text-align: center !important;
+        margin: 0 auto
+        }
+    *[class].padding {
+        padding: 10px 0
+        }
+    *[class].mobile-editable img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        }
+    }
+    </style>
+
+    <title></title>
+</head>
+
+<body class="mailer-design-option-backdrop" data-mailer-styles="background" style="margin: 0;background-color: #660000">
+
+</body>
+</html>
