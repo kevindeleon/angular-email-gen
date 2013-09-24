@@ -1,7 +1,7 @@
-<form name="optionsForm" ng-controller="MainCtrl">
+<form name="optionsForm">
 <label ng-repeat="header in assets.header_images">
     <input type="radio" ng-model="$parent.headerimage" value="{{header.url}}" name="optionsForm" />
-    <img src="{{header.url}}" />
+    <img ng-src="{{header.url}}" />
 </label>
 
 <div class="mailer-design-option-backdrop" data-mailer-styles="background" style="margin: 0;background-color: #9bb7c0">
