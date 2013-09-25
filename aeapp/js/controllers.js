@@ -1,8 +1,9 @@
 function MainCtrl($scope, $http) {
     $http.get('js/assets.json').then(function(res){
         $scope.assets = res.data;
-        // set default banner as first in array
+        // set default banner as first in array and also default alt
         $scope.assets.headerimage = $scope.assets.header_images[0].url;
+        $scope.assets.headeralt = $scope.assets.header_images[0].alt;
 
         // set default video image as first in array
         $scope.assets.videoimage = $scope.assets.video_images[0].url;

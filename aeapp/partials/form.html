@@ -2,7 +2,7 @@
     <accordion>
         <accordion-group heading="Choose a header image:">
             <label ng-repeat="header in assets.header_images">
-                <input type="radio" ng-model="assets.headerimage" value="{{header.url}}" id="{{header.id}}" />
+                <input type="radio" ng-model="assets.headerimage" value="{{header.url}}" id="{{header.id}}" ng-change="assets.headeralt = header.alt" />
                 <img ng-src="{{header.url}}" />
             </label>
         </accordion-group>
@@ -54,7 +54,7 @@
                                                                                         <div class="mailer-p-div" style="font-size: inherit">
                                                                                         
                                                                                             <!--THE HEADER IMAGE-->
-                                                                                            <a style="color: #660000; outline:none;" href="http://www.loyno.edu?utm_source=general&utm_medium=email&utm_campaign=enrollment" target="_blank"><img class="mobile-width-nopad" style="display:block; line-height:0; outline:none; border:none;" src="{{assets.headerimage}}" alt="Loyola University New Orleans" /></a>
+                                                                                            <a style="color: #660000; outline:none;" href="http://www.loyno.edu?utm_source=general&utm_medium=email&utm_campaign=enrollment" target="_blank"><img class="mobile-width-nopad" style="display:block; line-height:0; outline:none; border:none;" src="{{assets.headerimage}}" alt="{{assets.headeralt}}" /></a>
                                                                                             <!--/THE HEADER IMAGE-->
                                                                                             
                                                                                         </div>
