@@ -2,7 +2,13 @@ function MainCtrl($scope, $http) {
     $http.get('js/assets.json').then(function(res){
         $scope.assets = res.data;
         // set default banner as first in array
-        $scope.headerimage = $scope.assets.header_images[0].url;               
+        $scope.assets.headerimage = $scope.assets.header_images[0].url;
+
+        // set default video image as first in array
+        $scope.assets.videoimage = $scope.assets.video_images[0].url;
+
+        // set default button image as first in array
+        $scope.assets.buttonimage = $scope.assets.buttons[0].url;
     });
 }
 

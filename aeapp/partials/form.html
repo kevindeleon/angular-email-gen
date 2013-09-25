@@ -1,183 +1,202 @@
-<form name="optionsForm">
-<label ng-repeat="header in assets.header_images">
-    <input type="radio" ng-model="$parent.headerimage" value="{{header.url}}" name="optionsForm" />
-    <img ng-src="{{header.url}}" />
-</label>
+<div ng-controller="MainCtrl">
+    <accordion>
+        <accordion-group heading="Choose a header image:">
+            <label ng-repeat="header in assets.header_images">
+                <input type="radio" ng-model="assets.headerimage" value="{{header.url}}" id="{{header.id}}" />
+                <img ng-src="{{header.url}}" />
+            </label>
+        </accordion-group>
+        <accordion-group heading="Choose a video to feature:">
+            <label ng-repeat="videoimg in assets.video_images">
+                <input type="radio" ng-model="assets.videoimage" value="{{videoimg.url}}" id="{{videoimg.id}}" />
+                <img ng-src="{{videoimg.url}}" />
+            </label>
+            <label>
+                Enter a description for the video:
+                <textarea ng-model="assets.videotext" placeholder="Marketing words rock!" rows="5" cols="400"></textarea>
+            </label>
+            <label>
+                Enter a url for your video:
+                <input type="text" ng-model="assets.videourl" placeholder="ex: http://loyno.edu/test" />
+            </label>
+        </accordion-group>
+        <accordion-group heading="Choose a call to action:">
+            <label ng-repeat="button in assets.buttons">
+                <input type="radio" ng-model="assets.buttonimage" value="{{button.url}}" id="{{button.id}}" />
+                <img ng-src="{{button.url}}" />
+            </label>
+        </accordion-group>
+    </accordion>
+    <div class="mailer-design-option-backdrop" data-mailer-styles="background" style="margin: 0;background-color: #9bb7c0">
+            <table border="0" cellpadding="0" cellspacing="0" class="mailer-design-option-backdrop" data-mailer-color="#9bb7c0, #EDEAE2, #a1350f" data-mailer-styles="background" style="font-family: Helvetica;font-size: 12px;margin: 0;background-color: #660000" width="100%">
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" class="mobile-width-nopad" id="template_container" style="font-family: Helvetica;font-size: 12px" width="670">
+                            <tr>
+                                <td align="center" valign="top">
+                                    <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px" width="100%">
+                                        <tr>
+                                            <td align="left" class="mobile-hide" valign="top" width="1"><img border="0" height="15" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="1"></td>
+                                        </tr>
 
-<div class="mailer-design-option-backdrop" data-mailer-styles="background" style="margin: 0;background-color: #9bb7c0">
-        <table border="0" cellpadding="0" cellspacing="0" class="mailer-design-option-backdrop" data-mailer-color="#9bb7c0, #EDEAE2, #a1350f" data-mailer-styles="background" style="font-family: Helvetica;font-size: 12px;margin: 0;background-color: #660000" width="100%">
-            <tr>
-                <td align="center" valign="top">
-                    <table border="0" cellpadding="0" cellspacing="0" class="mobile-width-nopad" id="template_container" style="font-family: Helvetica;font-size: 12px" width="670">
-                        <tr>
-                            <td align="center" valign="top">
-                                <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px" width="100%">
-                                    <tr>
-                                        <td align="left" class="mobile-hide" valign="top" width="1"><img border="0" height="15" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="1"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td align="left" valign="top">
-                                            <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px;background-color:#EDEAE2" width="100%">
-                                                <tr>
-                                                    <td align="left" valign="top">
-                                                        <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px" width="100%">
-                                                            <tr>
-                                                                <td align="left" valign="top">
-                                                                    <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px" width="100%">
-                                                                        <tr>
-                                                                            <td align="left" class="business_name" style="font-family: Rockwell, Georgia, serif;font-size: 36px;color: #7a6f6b;font-weight: bold;text-transform: uppercase;" valign="top">
-                                                                                <div class="mailer-tag-outer">
-                                                                                    <div class="mailer-p-div" style="font-size: inherit">
-                                                                                    
-                                                                                        <!--THE HEADER IMAGE-->
-                                                                                        <a style="color: #660000; outline:none;" href="http://www.loyno.edu?utm_source=general&utm_medium=email&utm_campaign=enrollment" target="_blank"><img class="mobile-width-nopad" style="display:block; line-height:0; outline:none; border:none;" src="{{headerimage}}" alt="Loyola University New Orleans" /></a>
-                                                                                        <!--/THE HEADER IMAGE-->
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px;background-color:#EDEAE2" width="100%">
+                                                    <tr>
+                                                        <td align="left" valign="top">
+                                                            <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px" width="100%">
+                                                                <tr>
+                                                                    <td align="left" valign="top">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px" width="100%">
+                                                                            <tr>
+                                                                                <td align="left" class="business_name" style="font-family: Rockwell, Georgia, serif;font-size: 36px;color: #7a6f6b;font-weight: bold;text-transform: uppercase;" valign="top">
+                                                                                    <div class="mailer-tag-outer">
+                                                                                        <div class="mailer-p-div" style="font-size: inherit">
                                                                                         
+                                                                                            <!--THE HEADER IMAGE-->
+                                                                                            <a style="color: #660000; outline:none;" href="http://www.loyno.edu?utm_source=general&utm_medium=email&utm_campaign=enrollment" target="_blank"><img class="mobile-width-nopad" style="display:block; line-height:0; outline:none; border:none;" src="{{assets.headerimage}}" alt="Loyola University New Orleans" /></a>
+                                                                                            <!--/THE HEADER IMAGE-->
+                                                                                            
+                                                                                        </div>
                                                                                     </div>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="left" valign="top">
-                                            <table border="0" cellpadding="0" cellspacing="0" class="mobile-width-nopad" style="font-family: Helvetica;font-size: 12px" width="670">
-                                                <tr>
-                                                    <td align="left" bgcolor="#ffffff" class="mobile-hide" valign="top" width="25"><img border="0" height="1" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="25"></td>
-                                                    <td align="left" bgcolor="#FFFFFF" valign="top">
-                                                        <table border="0" cellpadding="0" cellspacing="0" class="mobile-width" style="font-family: Helvetica;font-size: 12px" width="612">
-                                                            <tr>
-                                                                <td align="left" bgcolor="#FFFFFF" class="mobile-hide" valign="top" width="1"><img border="0" height="15" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="1"></td>
-                                                            </tr>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <table border="0" cellpadding="0" cellspacing="0" class="mobile-width-nopad" style="font-family: Helvetica;font-size: 12px" width="670">
+                                                    <tr>
+                                                        <td align="left" bgcolor="#ffffff" class="mobile-hide" valign="top" width="25"><img border="0" height="1" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="25"></td>
+                                                        <td align="left" bgcolor="#FFFFFF" valign="top">
+                                                            <table border="0" cellpadding="0" cellspacing="0" class="mobile-width" style="font-family: Helvetica;font-size: 12px" width="612">
+                                                                <tr>
+                                                                    <td align="left" bgcolor="#FFFFFF" class="mobile-hide" valign="top" width="1"><img border="0" height="15" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="1"></td>
+                                                                </tr>
 
-                                                            <tr>
-                                                                <td align="left" valign="top">
-                                                                    <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px" width="100%">
-                                                                        <tr>
-                                                                            <td class="mailer-layout-column-content mailer-design-option-main-body" data-mailer-styles="background,border-left,border-right" style="background-color: transparent" valign="top" width="68%">
+                                                                <tr>
+                                                                    <td align="left" valign="top">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px" width="100%">
+                                                                            <tr>
+                                                                                <td class="mailer-layout-column-content mailer-design-option-main-body" data-mailer-styles="background,border-left,border-right" style="background-color: transparent" valign="top" width="68%">
 
 
-                                                                                <table border="0" cellpadding="0" cellspacing="0" class="mailer-block-outer" id="block_unftdwxk" style="font-family: Helvetica;font-size: 12px" width="100%">
-                                                                                    <tr>
-                                                                                        <td style="padding-bottom:5px"></td>
-                                                                                    </tr>
+                                                                                    <table border="0" cellpadding="0" cellspacing="0" class="mailer-block-outer" id="block_unftdwxk" style="font-family: Helvetica;font-size: 12px" width="100%">
+                                                                                        <tr>
+                                                                                            <td style="padding-bottom:5px"></td>
+                                                                                        </tr>
 
-                                                                                    <tr>
-                                                                                        <td class="mailer-wrapper mailer-image-td" style="padding-right: 5px;padding-bottom: 5px;padding-left: 5px;font-size: 12px;line-height: 1.5" valign="top">
-                                                                                            <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px" width="100%">
-                                                                                                <tr>
-                                                                                                    <td class="mailer-holder" style="padding: 0;background-color: transparent" valign="top">
-                                                                                                    
-                                                                                                        <!-- Main Content!! -->
-                                                                                                        <div class="mailer-content-block">
-                                                                                                            <div class="mailer-p-div" style="display: block;margin-bottom: 10px;font-size: 12px;line-height: 1.5;font-weight: normal;font-family: Helvetica, Arial, sans-serif;font-size: 14px;color: #3a3a3a">
-                                                                                                                <strong>Lorem Ipsum</strong><br>
-                                                                                                                Dolor sit amet, consectetur adipiscing elit. Aliquam accumsan justo non nisi aliquam facilisis. Donec accumsan porta nisi, at aliquam mauris scelerisque ac. Aliquam erat volutpat. Suspendisse a velit orci.<br/><br/>
-                                                                                                                Dolor sit amet, consectetur adipiscing elit. Aliquam accumsan justo non nisi aliquam facilisis. Donec accumsan porta nisi, at aliquam mauris scelerisque ac. Aliquam erat volutpat. Suspendisse a velit orci.<br/><br/>
-                                                                                                                Dolor sit amet, consectetur adipiscing elit. Aliquam accumsan justo non nisi aliquam facilisis. Donec accumsan porta nisi, at aliquam mauris scelerisque ac. Aliquam erat volutpat. Suspendisse a velit orci.<br/><br/>
-                                                                                                                Dolor sit amet, consectetur adipiscing elit. Aliquam accumsan justo non nisi aliquam facilisis. Donec accumsan porta nisi, at aliquam mauris scelerisque ac. Aliquam erat volutpat. Suspendisse a velit orci.<br/><br/>
-                                                                                                                Dolor sit amet, consectetur adipiscing elit. Aliquam accumsan justo non nisi aliquam facilisis. Donec accumsan porta nisi, at aliquam mauris scelerisque ac. Aliquam erat volutpat. Suspendisse a velit orci.<br/><br/>
-                                                                                                                Dolor sit amet, consectetur adipiscing elit. Aliquam accumsan justo non nisi aliquam facilisis. Donec accumsan porta nisi, at aliquam mauris scelerisque ac. Aliquam erat volutpat. Suspendisse a velit orci.<br/><br/>
+                                                                                        <tr>
+                                                                                            <td class="mailer-wrapper mailer-image-td" style="padding-right: 5px;padding-bottom: 5px;padding-left: 5px;font-size: 12px;line-height: 1.5" valign="top">
+                                                                                                <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px" width="100%">
+                                                                                                    <tr>
+                                                                                                        <td class="mailer-holder" style="padding: 0;background-color: transparent" valign="top">
+                                                                                                        
+                                                                                                            <!-- Main Content!! -->
+                                                                                                            <div class="mailer-content-block">
+                                                                                                                <div class="mailer-p-div" style="display: block;margin-bottom: 10px;font-size: 12px;line-height: 1.5;font-weight: normal;font-family: Helvetica, Arial, sans-serif;font-size: 14px;color: #3a3a3a">
+                                                                                                                    <strong>Lorem Ipsum</strong><br>
+                                                                                                                    Dolor sit amet, consectetur adipiscing elit. Aliquam accumsan justo non nisi aliquam facilisis. Donec accumsan porta nisi, at aliquam mauris scelerisque ac. Aliquam erat volutpat. Suspendisse a velit orci.<br/><br/>
+                                                                                                                    Dolor sit amet, consectetur adipiscing elit. Aliquam accumsan justo non nisi aliquam facilisis. Donec accumsan porta nisi, at aliquam mauris scelerisque ac. Aliquam erat volutpat. Suspendisse a velit orci.<br/><br/>
+                                                                                                                    Dolor sit amet, consectetur adipiscing elit. Aliquam accumsan justo non nisi aliquam facilisis. Donec accumsan porta nisi, at aliquam mauris scelerisque ac. Aliquam erat volutpat. Suspendisse a velit orci.<br/><br/>
+                                                                                                                    Dolor sit amet, consectetur adipiscing elit. Aliquam accumsan justo non nisi aliquam facilisis. Donec accumsan porta nisi, at aliquam mauris scelerisque ac. Aliquam erat volutpat. Suspendisse a velit orci.<br/><br/>
+                                                                                                                    Dolor sit amet, consectetur adipiscing elit. Aliquam accumsan justo non nisi aliquam facilisis. Donec accumsan porta nisi, at aliquam mauris scelerisque ac. Aliquam erat volutpat. Suspendisse a velit orci.<br/><br/>
+                                                                                                                    Dolor sit amet, consectetur adipiscing elit. Aliquam accumsan justo non nisi aliquam facilisis. Donec accumsan porta nisi, at aliquam mauris scelerisque ac. Aliquam erat volutpat. Suspendisse a velit orci.<br/><br/>
+                                                                                                                </div>
                                                                                                             </div>
-                                                                                                        </div>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </table>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
 
-                                                                            </td>
-                                                                            
-                                                                            <!-- Sidebar!! -->
-                                                                            <td align="left" bgcolor="#ffffff" class="mobile-hide" valign="top" width="4%"><img border="0" height="1" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="4%"></td>
-                                                                            <td class="mailer-layout-column-sidebar mailer-design-option-right-sidebar" data-mailer-styles="background,border-left,border-right" style="background-color: transparent" valign="top" width="24%">
-                                                                                <table border="0" cellpadding="0" cellspacing="0" class="mailer-block-outer" id="block_jrsfirzv" style="font-family: Helvetica;font-size: 12px" width="100%">
+                                                                                </td>
+                                                                                
+                                                                                <!-- Sidebar!! -->
+                                                                                <td align="left" bgcolor="#ffffff" class="mobile-hide" valign="top" width="4%"><img border="0" height="1" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="4%"></td>
+                                                                                <td class="mailer-layout-column-sidebar mailer-design-option-right-sidebar" data-mailer-styles="background,border-left,border-right" style="background-color: transparent" valign="top" width="24%">
+                                                                                    <table border="0" cellpadding="0" cellspacing="0" class="mailer-block-outer" id="block_jrsfirzv" style="font-family: Helvetica;font-size: 12px" width="100%">
 
-                                                                                    <tr>
-                                                                                        <td class="mailer-wrapper" style="padding-right: 5px;padding-bottom: 5px;padding-left: 5px" valign="top">
-                                                                                            <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px" width="100%">
-                                                                                                <tr>
-                                                                                                    <td class="mailer-holder" style="padding: 0;background-color: transparent" valign="top">
-                                                                                                        <div class="mailer-combo-content mailer-content-block" style="font-size: 12px;line-height: 1.5">
-                                                                                                            <div class="mailer-p-div" style="display: block;margin-bottom: 10px;font-size: 12px;line-height: 1.5;font-weight: normal;font-family: Helvetica, Arial, sans-serif;font-size: 14px;color: #3a3a3a;font-family: Helvetica, Arial, sans-serif;font-size: 14px;color: #3a3a3a" align="center">
-                                                                                                                <a href="http://apply.loyno.edu/admissions-video-archives?v=65323751&utm_source=general&utm_medium=email&utm_campaign=enrollment"><img style="outline:none; border:0;" src="http://www.loyno.edu/emails-newsletters/admissions/enrollment/food-music-culture-video.jpg" alt="Food, Music, and Culture"/></a><br/>
-                                                                                                                Combine academic study with the food, music and culture of a great American city - join us at Loyola University New Orleans<br/>
-                                                                                                                <a href="https://secure.loyno.edu/apply/application?utm_source=general&utm_medium=email&utm_campaign=enrollment" style="outline:none; border:none;"><img style=" border:0; margin-top:15px;" src="http://www.loyno.edu/emails-newsletters/admissions/general/apply-now.jpg" alt="Apply Now"/></a><br/>
-                        <img style="outline:none; border:none;" src="http://www.loyno.edu/emails-newsletters/admissions/enrollment/questions.jpg" alt="Questions? Call 800.4.LOYOLA"/><br/>
-                                                                                                                <a href="https://secure.loyno.edu/apply/application?utm_source=general&utm_medium=email&utm_campaign=enrollment" style="outline:none; border:none;"><img style=" border:0; margin-top:15px;" src="http://www.loyno.edu/emails-newsletters/admissions/general/enroll-now.jpg" alt="Enroll Now"/></a><br/>
-                        <img style="outline:none; border:none;" src="http://www.loyno.edu/emails-newsletters/admissions/enrollment/questions.jpg" alt="Questions? Call 800.4.LOYOLA"/><br/>
-                                                                                                                <a href="https://secure.loyno.edu/apply/application?utm_source=general&utm_medium=email&utm_campaign=enrollment" style="outline:none; border:none;"><img style=" border:0; margin-top:15px;" src="http://www.loyno.edu/emails-newsletters/admissions/general/visit-loyola.jpg" alt="Visit Loyola"/></a><br/>
-                        <img style="outline:none; border:none;" src="http://www.loyno.edu/emails-newsletters/admissions/enrollment/questions.jpg" alt="Questions? Call 800.4.LOYOLA"/><br/>
-                        <a href="http://youvisit.com/tour-loyno.html?utm_source=general&utm_medium=email&utm_campaign=enrollment"><img style="outline:none; border:0;" src="http://www.loyno.edu/emails-newsletters/admissions/enrollment/find-your-place.jpg" alt="Take a Tour"/></a><br/>
-                                                                                                            Visit us, or take a virtual tour of our campus. <a style="color:#990000;" href="http://youvisit.com/tour-loyno.html?utm_source=general&utm_medium=email&utm_campaign=enrollment">Take a tour &raquo;</a><br/>
-                                                                                                            <a href="https://www.facebook.com/applytoloyola?utm_source=general&utm_medium=email&utm_campaign=enrollment"><img style="outline:none; border:0; border:none; margin-top:15px;" src="http://www.loyno.edu/emails-newsletters/admissions/general/facebook.jpg" alt="Find us on Facebook"/></a>
+                                                                                        <tr>
+                                                                                            <td class="mailer-wrapper" style="padding-right: 5px;padding-bottom: 5px;padding-left: 5px" valign="top">
+                                                                                                <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px" width="100%">
+                                                                                                    <tr>
+                                                                                                        <td class="mailer-holder" style="padding: 0;background-color: transparent" valign="top">
+                                                                                                            <div class="mailer-combo-content mailer-content-block" style="font-size: 12px;line-height: 1.5">
+                                                                                                                <div class="mailer-p-div" style="display: block;margin-bottom: 10px;font-size: 12px;line-height: 1.5;font-weight: normal;font-family: Helvetica, Arial, sans-serif;font-size: 14px;color: #3a3a3a;font-family: Helvetica, Arial, sans-serif;font-size: 14px;color: #3a3a3a" align="center">
+                                                                                                                    <a href="{{assets.videourl}}"><img style="outline:none; border:0;" src="{{assets.videoimage}}" alt="Food, Music, and Culture"/></a><br/>
+                                                                                                                    {{assets.videotext}}<br/>
+                                                                                                                    <a href="https://secure.loyno.edu/apply/application?utm_source=general&utm_medium=email&utm_campaign=enrollment" style="outline:none; border:none;"><img style=" border:0; margin-top:15px;" src="{{assets.buttonimage}}" alt="Apply Now"/></a><br/>
+                            <img style="outline:none; border:none;" src="http://www.loyno.edu/emails-newsletters/admissions/enrollment/questions.jpg" alt="Questions? Call 800.4.LOYOLA"/><br/>
+                            <a href="http://youvisit.com/tour-loyno.html?utm_source=general&utm_medium=email&utm_campaign=enrollment"><img style="outline:none; border:0;" src="http://www.loyno.edu/emails-newsletters/admissions/enrollment/find-your-place.jpg" alt="Take a Tour"/></a><br/>
+                                                                                                                Visit us, or take a virtual tour of our campus. <a style="color:#990000;" href="http://youvisit.com/tour-loyno.html?utm_source=general&utm_medium=email&utm_campaign=enrollment">Take a tour &raquo;</a><br/>
+                                                                                                                <a href="https://www.facebook.com/applytoloyola?utm_source=general&utm_medium=email&utm_campaign=enrollment"><img style="outline:none; border:0; border:none; margin-top:15px;" src="http://www.loyno.edu/emails-newsletters/admissions/general/facebook.jpg" alt="Find us on Facebook"/></a>
+                                                                                                                </div>
                                                                                                             </div>
-                                                                                                        </div>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </table>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
 
 
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
 
-                                                            <tr>
-                                                                <td align="left" bgcolor="#FFFFFF" class="mobile-hide" valign="top" width="1"><img border="0" height="15" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="1" /></td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-
-
-                                                    <td align="left" bgcolor="#ffffff" class="mobile-hide" valign="top" width="29"><img border="0" height="1" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="29" /></td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
+                                                                <tr>
+                                                                    <td align="left" bgcolor="#FFFFFF" class="mobile-hide" valign="top" width="1"><img border="0" height="15" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="1" /></td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
 
 
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
+                                                        <td align="left" bgcolor="#ffffff" class="mobile-hide" valign="top" width="29"><img border="0" height="1" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="29" /></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
 
-            <tr>
-                <td align="center" class="mailer-unsubscribe" style="padding-bottom: 10px;padding-top:15px">
-                    <table border="0" cellpadding="0" cellspacing="0" class="mobile-width" style="font-family: Helvetica;font-size: 12px" width="550"  color="#CC9999">
-                        <tr>
-                            <td align="center">
-                                <div class="business_rsvp" style="padding: 10px;color: #CC9999;font-size: 10px;font-family: Verdana">
-                                    Loyola University New Orleans 6363 St. Charles Ave., Box 63 | New Orleans, LA 70118 US
-                                </div>
 
-                                <div>
-                                    <span style="color: #CC9999; font-size: 10px; font-family: Verdana">
-                                        You are receiving this message because you've requested information from Loyola University New Orleans.<br/>If you do not wish to receive further communications, <a style="color:#ffffff;" href="#">unsubscribe</a> here.
-                                    </span>
-                                </div>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
 
-                                <div style="margin-top:10px"></div>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
+                <tr>
+                    <td align="center" class="mailer-unsubscribe" style="padding-bottom: 10px;padding-top:15px">
+                        <table border="0" cellpadding="0" cellspacing="0" class="mobile-width" style="font-family: Helvetica;font-size: 12px" width="550"  color="#CC9999">
+                            <tr>
+                                <td align="center">
+                                    <div class="business_rsvp" style="padding: 10px;color: #CC9999;font-size: 10px;font-family: Verdana">
+                                        Loyola University New Orleans 6363 St. Charles Ave., Box 63 | New Orleans, LA 70118 US
+                                    </div>
+
+                                    <div>
+                                        <span style="color: #CC9999; font-size: 10px; font-family: Verdana">
+                                            You are receiving this message because you've requested information from Loyola University New Orleans.<br/>If you do not wish to receive further communications, <a style="color:#ffffff;" href="#">unsubscribe</a> here.
+                                        </span>
+                                    </div>
+
+                                    <div style="margin-top:10px"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
     </div>
-</form>
+</div> <!-- /EndController -->
