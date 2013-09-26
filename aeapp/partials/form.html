@@ -2,7 +2,7 @@
     <accordion>
         <accordion-group heading="Choose a header image:">
             <label ng-repeat="header_image in assets.header_images">
-                <input type="radio" ng-model="assets.headerimage" value="{{header_image.url}}" id="{{header_image.id}}" ng-change="assets.header_image_alt = header_image.alt" />
+                <input type="radio" ng-model="assets.header_image" value="{{header_image.url}}" id="{{header_image.id}}" ng-change="assets.header_image_alt = header_image.alt" />
                 <img ng-src="{{header_image.url}}" />
             </label>
         </accordion-group>
