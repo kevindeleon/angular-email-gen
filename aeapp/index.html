@@ -2,6 +2,7 @@
 <html ng-app="emailGen">
 <head>
     <script>
+    // This application lives in a subfolder, so this is neccessary
     document.write('<base href="' + document.location + '" />');
     </script>
     <script src="vendor/js/angular.min.js"></script>
@@ -14,7 +15,7 @@
 <body>
 <div>
     <div class="container">
-        <div class="navbar" ng-controller="HeaderCtrl">
+        <div class="navbar" ng-controller="NavCtrl">
             <div class="navbar-inner">
                 <a class="brand" href="#">Admissions Email Generator</a>
                 <ul class="nav">
@@ -23,8 +24,10 @@
                 </ul>
             </div>
         </div> <!-- /nav-bar -->
-
+        
+        <!-- Begin Partials -->
         <div ng-view></div>
+        <!-- End Partials -->
     
     </div> <!-- /container -->
 </div>
