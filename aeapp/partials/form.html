@@ -26,6 +26,23 @@
                 <img ng-src="{{button.url}}" />
             </label>
         </accordion-group>
+        <accordion-group heading="Create additional sidebar items:">
+            <button class="btn" ng-click="open()">Add Item</button>
+            <div ng-show="selected">Selection from modal: {{ selected }}</div>
+            <script type="text/ng-template" id="sidebarModalContent.html">
+                <div class="modal-header">
+                    <h3>Build your Side Item</h3>
+                </div>
+                <div class="modal-body">
+                    <select ng-model="selected.asset" ng-options="sidebar_image.name for sidebar_image in assets.sidebar_images"></select>
+                    Selected: <b>{{selected.asset}}</b>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" ng-click="ok()">OK</button>
+                    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                </div>
+            </script>
+        </accordion-group>
     </accordion>
     <div class="mailer-design-option-backdrop" data-mailer-styles="background" style="margin: 0;background-color: #9bb7c0">
             <table border="0" cellpadding="0" cellspacing="0" class="mailer-design-option-backdrop" data-mailer-color="#9bb7c0, #EDEAE2, #a1350f" data-mailer-styles="background" style="font-family: Helvetica;font-size: 12px;margin: 0;background-color: #660000" width="100%">

@@ -1,4 +1,4 @@
-function MainCtrl($scope, $http) {
+function MainCtrl($scope, $http, $modal, $log) {
     // retrieve data from json file
     $http.get('js/assets.json').then(function(res){
         $scope.assets = res.data;
@@ -14,6 +14,40 @@ function MainCtrl($scope, $http) {
         $scope.assets.button_image = $scope.assets.buttons[0].url;
         $scope.assets.button_image_alt = $scope.assets.buttons[0].alt;
     });
+
+    $scope.open = function() {
+        var modalInstance = $modal.open({
+            templateUrl: 'sidebarModalContent.html',
+            controller: SidebarModalCtrl,
+            resolve: {
+                assets: function() {
+                    return $scope.assets;
+                }
+            }
+        });
+
+        modalInstance.result.then(function (selectedAsset) {
+          $scope.selected = selectedAsset;
+        }, function () {
+          $log.info('Modal dismissed at: ' + new Date());
+        });
+    }
+}
+
+function SidebarModalCtrl($scope, $modalInstance, assets) {
+    $scope.assets = assets;
+
+    $scope.selected = {
+        asset: $scope.assets[0]
+    };
+
+    $scope.ok = function() {
+        $modalInstance.close($scope.selected.asset);
+    }
+
+    $scope.cancel = function() {
+        $modalInstance.dismiss('cancel');
+    }
 }
 
 // Controls header/navigation actions, classes, etc...

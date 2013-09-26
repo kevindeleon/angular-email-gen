@@ -3,19 +3,19 @@
         {
             "id" : "apply-button",
             "alt" : "Apply Now",
-            "fname" : "apply-now.jpg",
+            "name" : "apply-now.jpg",
             "url" : "email-assets/buttons/apply-now.jpg"
         },
         {
             "id" : "enroll-button",
             "alt" : "Enroll Now",
-            "fname" : "enroll-now.jpg",
+            "name" : "enroll-now.jpg",
             "url" : "email-assets/buttons/enroll-now.jpg"
         },
         {
             "id" : "visit-button",
             "alt" : "Visit Loyola",
-            "fname" : "visit-loyola.jpg",
+            "name" : "visit-loyola.jpg",
             "url" : "email-assets/buttons/visit-loyola.jpg"
         }
     ],
@@ -23,25 +23,25 @@
         {
             "id" : "havoc-header",
             "alt" : "Loyola University New Orleans &ndash; Wolfpack",
-            "fname" : "admissions-general-havoc-header.jpg",
+            "name" : "admissions-general-havoc-header.jpg",
             "url" : "email-assets/header-images/admissions-general-havoc-header.jpg"
         },
         {
             "id" : "cob-header",
             "alt" : "Loyola University New Orleans",
-            "fname" : "cob-banner.jpg",
+            "name" : "cob-banner.jpg",
             "url" : "email-assets/header-images/cob-banner.jpg"
         },
         {
             "id" : "css-header",
             "alt" : "Loyola University New Orleans",
-            "fname" : "css-banner.jpg",
+            "name" : "css-banner.jpg",
             "url" : "email-assets/header-images/css-banner.jpg"
         },
         {
             "id" : "huns-header",
             "alt" : "Loyola University New Orleans",
-            "fname" : "huns-banner.jpg",
+            "name" : "huns-banner.jpg",
             "url" : "email-assets/header-images/huns-banner.jpg"
         }
     ],
@@ -49,55 +49,55 @@
         {
             "id" : "aasbc-side",
             "alt" : "AASBC International",
-            "fname" : "aasbc.jpg",
+            "name" : "AASBC International",
             "url" : "email-assets/sidebar-images/aasbc.jpg"
         },
         {
             "id" : "cob-academic-side",
             "alt" : "Academic Programs",
-            "fname" : "cob-academic-programs.jpg",
+            "name" : "COB Academic",
             "url" : "email-assets/sidebar-images/cob-academic-programs.jpg"
         },
         {
             "id" : "css-academic-side",
             "alt" : "Academic Programs",
-            "fname" : "css-academic-programs.jpg",
+            "name" : "CSS Academic",
             "url" : "email-assets/sidebar-images/css-academic-programs.jpg"
         },
         {
             "id" : "css-centers-side",
             "alt" : "Centers and Institutes",
-            "fname" : "css-centers-and-institutes.jpg",
+            "name" : "Centers and Institutes",
             "url" : "email-assets/sidebar-images/css-centers-and-institutes.jpg"
         },
         {
             "id" : "find-side",
             "alt" : "Find Your Place at Loyola",
-            "fname" : "find-your-place.jpg",
+            "name" : "Find Your Place",
             "url" : "email-assets/sidebar-images/find-your-place.jpg"
         },
         {
             "id" : "research-side",
             "alt" : "Academic Research",
-            "fname" : "huns-academic-research.jpg",
+            "name" : "Huns Research",
             "url" : "email-assets/sidebar-images/huns-academic-research.jpg"
         },
         {
             "id" : "journalism-side",
             "alt" : "Journalism",
-            "fname" : "journalism.jpg",
+            "name" : "Journalism",
             "url" : "email-assets/sidebar-images/journalism.jpg"
         },
         {
             "id" : "pr-side",
             "alt" : "Public Relations",
-            "fname" : "public-relations.jpg",
+            "name" : "Public Relations",
             "url" : "email-assets/sidebar-images/public-relations.jpg"
         },
         {
             "id" : "wpc-side",
             "alt" : "Walker Percy Center",
-            "fname" : "walker-percy.jpg",
+            "name" : "Walker Percy",
             "url" : "email-assets/sidebar-images/walker-percy.jpg"
         }
     ],
@@ -105,19 +105,19 @@
         {
             "id" : "financial-vid",
             "alt" : "Financial Management",
-            "fname" : "cob-video.jpg",
+            "name" : "cob-video.jpg",
             "url" : "email-assets/video-images/cob-video.jpg"
         },
         {
             "id" : "culture-vid",
             "alt" : "Play Culture",
-            "fname" : "food-music-culture-video.jpg",
+            "name" : "food-music-culture-video.jpg",
             "url" : "email-assets/video-images/food-music-culture-video.jpg"
         },
         {
             "id" : "bateman-vid",
             "alt" : "Play Bateman Video",
-            "fname" : "loyola-bateman-team.jpg",
+            "name" : "loyola-bateman-team.jpg",
             "url" : "email-assets/video-images/loyola-bateman-team.jpg"
         }
     ]
