@@ -110,13 +110,13 @@
         },
         {
             "id" : "culture-vid",
-            "alt" : "Play Now",
+            "alt" : "Play Culture",
             "fname" : "food-music-culture-video.jpg",
             "url" : "email-assets/video-images/food-music-culture-video.jpg"
         },
         {
             "id" : "bateman-vid",
-            "alt" : "",
+            "alt" : "Play Bateman Video",
             "fname" : "loyola-bateman-team.jpg",
             "url" : "email-assets/video-images/loyola-bateman-team.jpg"
         }

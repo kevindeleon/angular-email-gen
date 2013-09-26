@@ -1,28 +1,28 @@
 <div ng-controller="MainCtrl">
     <accordion>
         <accordion-group heading="Choose a header image:">
-            <label ng-repeat="header in assets.header_images">
-                <input type="radio" ng-model="assets.headerimage" value="{{header.url}}" id="{{header.id}}" ng-change="assets.headeralt = header.alt" />
-                <img ng-src="{{header.url}}" />
+            <label ng-repeat="header_image in assets.header_images">
+                <input type="radio" ng-model="assets.headerimage" value="{{header_image.url}}" id="{{header_image.id}}" ng-change="assets.header_image_alt = header_image.alt" />
+                <img ng-src="{{header_image.url}}" />
             </label>
         </accordion-group>
         <accordion-group heading="Choose a video to feature:">
-            <label ng-repeat="videoimg in assets.video_images">
-                <input type="radio" ng-model="assets.videoimage" value="{{videoimg.url}}" id="{{videoimg.id}}" />
-                <img ng-src="{{videoimg.url}}" />
+            <label ng-repeat="video_image in assets.video_images">
+                <input type="radio" ng-model="assets.video_image" value="{{video_image.url}}" id="{{video_image.id}}" ng-change="assets.video_image_alt = video_image.alt" />
+                <img ng-src="{{video_image.url}}" />
             </label>
             <label>
                 Enter a description for the video:
-                <textarea ng-model="assets.videotext" placeholder="Marketing words rock!" rows="5" cols="400"></textarea>
+                <textarea ng-model="assets.video_text" placeholder="Marketing words rock!" rows="5" cols="400"></textarea>
             </label>
             <label>
                 Enter a url for your video:
-                <input type="text" ng-model="assets.videourl" placeholder="ex: http://loyno.edu/test" />
+                <input type="text" ng-model="assets.video_url" placeholder="ex: http://loyno.edu/test" />
             </label>
         </accordion-group>
         <accordion-group heading="Choose a call to action:">
             <label ng-repeat="button in assets.buttons">
-                <input type="radio" ng-model="assets.buttonimage" value="{{button.url}}" id="{{button.id}}" />
+                <input type="radio" ng-model="assets.button_image" value="{{button.url}}" id="{{button.id}}" ng-change="assets.button_image_alt = button.alt" />
                 <img ng-src="{{button.url}}" />
             </label>
         </accordion-group>
@@ -54,7 +54,7 @@
                                                                                         <div class="mailer-p-div" style="font-size: inherit">
                                                                                         
                                                                                             <!--THE HEADER IMAGE-->
-                                                                                            <a style="color: #660000; outline:none;" href="http://www.loyno.edu?utm_source=general&utm_medium=email&utm_campaign=enrollment" target="_blank"><img class="mobile-width-nopad" style="display:block; line-height:0; outline:none; border:none;" src="{{assets.headerimage}}" alt="{{assets.headeralt}}" /></a>
+                                                                                            <a style="color: #660000; outline:none;" href="http://www.loyno.edu?utm_source=general&utm_medium=email&utm_campaign=enrollment" target="_blank"><img class="mobile-width-nopad" style="display:block; line-height:0; outline:none; border:none;" src="{{assets.header_image}}" alt="{{assets.header_image_alt}}" /></a>
                                                                                             <!--/THE HEADER IMAGE-->
                                                                                             
                                                                                         </div>
@@ -132,9 +132,9 @@
                                                                                                         <td class="mailer-holder" style="padding: 0;background-color: transparent" valign="top">
                                                                                                             <div class="mailer-combo-content mailer-content-block" style="font-size: 12px;line-height: 1.5">
                                                                                                                 <div class="mailer-p-div" style="display: block;margin-bottom: 10px;font-size: 12px;line-height: 1.5;font-weight: normal;font-family: Helvetica, Arial, sans-serif;font-size: 14px;color: #3a3a3a;font-family: Helvetica, Arial, sans-serif;font-size: 14px;color: #3a3a3a" align="center">
-                                                                                                                    <a href="{{assets.videourl}}"><img style="outline:none; border:0;" src="{{assets.videoimage}}" alt="Food, Music, and Culture"/></a><br/>
-                                                                                                                    {{assets.videotext}}<br/>
-                                                                                                                    <a href="https://secure.loyno.edu/apply/application?utm_source=general&utm_medium=email&utm_campaign=enrollment" style="outline:none; border:none;"><img style=" border:0; margin-top:15px;" src="{{assets.buttonimage}}" alt="Apply Now"/></a><br/>
+                                                                                                                    <a href="{{assets.video_url}}"><img style="outline:none; border:0;" src="{{assets.video_image}}" alt="{{assets.video_image_alt}}"/></a><br/>
+                                                                                                                    {{assets.video_text}}<br/>
+                                                                                                                    <a href="https://secure.loyno.edu/apply/application?utm_source=general&utm_medium=email&utm_campaign=enrollment" style="outline:none; border:none;"><img style=" border:0; margin-top:15px;" src="{{assets.button_image}}" alt="{{assets.button_image_alt}}"/></a><br/>
                             <img style="outline:none; border:none;" src="http://www.loyno.edu/emails-newsletters/admissions/enrollment/questions.jpg" alt="Questions? Call 800.4.LOYOLA"/><br/>
                             <a href="http://youvisit.com/tour-loyno.html?utm_source=general&utm_medium=email&utm_campaign=enrollment"><img style="outline:none; border:0;" src="http://www.loyno.edu/emails-newsletters/admissions/enrollment/find-your-place.jpg" alt="Take a Tour"/></a><br/>
                                                                                                                 Visit us, or take a virtual tour of our campus. <a style="color:#990000;" href="http://youvisit.com/tour-loyno.html?utm_source=general&utm_medium=email&utm_campaign=enrollment">Take a tour &raquo;</a><br/>
