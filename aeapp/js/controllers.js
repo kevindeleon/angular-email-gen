@@ -43,6 +43,7 @@ function MainCtrl($scope, $http, $modal, $log) {
             }
         }, function () {
             // on modal cancel() from SidebarModalCtrl
+            // **note not sure if we need anything here...this needs to be removed
             $log.info('Modal dismissed at: ' + new Date());
         });
     }
