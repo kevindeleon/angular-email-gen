@@ -28,13 +28,13 @@
         </accordion-group>
         <accordion-group heading="Create additional sidebar items:">
             <button class="btn" ng-click="open()">Add Item</button>
-            <div ng-show="selected">Selection from modal: {{ selected }}</div>
+            <div ng-show="selected">Selection from modal: {{selected}}</div>
             <script type="text/ng-template" id="sidebarModalContent.html">
                 <div class="modal-header">
                     <h3>Build your Side Item</h3>
                 </div>
                 <div class="modal-body">
-                    <select ng-model="selected.asset" ng-options="sidebar_image.name for sidebar_image in assets.sidebar_images"></select>
+                    <select ng-model="selected.asset" ng-options="sidebar_image.name for sidebar_image in assets.sidebar_images"></select><br />
                     Selected: <b>{{selected.asset}}</b>
                 </div>
                 <div class="modal-footer">

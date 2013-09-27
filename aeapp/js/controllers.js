@@ -15,10 +15,15 @@ function MainCtrl($scope, $http, $modal, $log) {
         $scope.assets.button_image_alt = $scope.assets.buttons[0].alt;
     });
 
+    // initial function fired when modal is opened by "add item" button
     $scope.open = function() {
         var modalInstance = $modal.open({
+            //template lives in form.html in script tags
             templateUrl: 'sidebarModalContent.html',
             controller: SidebarModalCtrl,
+            //grab assets json from MainCtrl and passes to SidebarModalCtrl
+            // **note..maybe want to JUST grab sidebar_images json..maybe cahnge this?
+            // **note...could also consider putting sidebar html in json file...bad practice?
             resolve: {
                 assets: function() {
                     return $scope.assets;
@@ -26,26 +31,39 @@ function MainCtrl($scope, $http, $modal, $log) {
             }
         });
 
+        // receives selectedAsset from SidebarModalCtrl ok() function
         modalInstance.result.then(function (selectedAsset) {
-          $scope.selected = selectedAsset;
+            // This adds multiple elements to the selected array if it exists
+            if ($scope.selected) {
+                $scope.selected.push(selectedAsset);
+            } else {
+                // if not, then instantiate it and then push.
+                $scope.selected = [];
+                $scope.selected.push(selectedAsset);
+            }
         }, function () {
-          $log.info('Modal dismissed at: ' + new Date());
+            // on modal cancel() from SidebarModalCtrl
+            $log.info('Modal dismissed at: ' + new Date());
         });
     }
 }
 
 function SidebarModalCtrl($scope, $modalInstance, assets) {
+    //assets received from MainCtrl resolve
     $scope.assets = assets;
 
+    //instantiate selected.asset for use in Modal
     $scope.selected = {
-        asset: $scope.assets[0]
+        asset: null
     };
 
     $scope.ok = function() {
+        // pass selected asset back to MainCtrl modalInstance
         $modalInstance.close($scope.selected.asset);
     }
 
     $scope.cancel = function() {
+        // dismiss modal returns to second callback in modalInstance promise
         $modalInstance.dismiss('cancel');
     }
 }
