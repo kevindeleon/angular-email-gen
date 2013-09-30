@@ -21,7 +21,7 @@ function MainCtrl($scope, $http, $modal, $log) {
             //template lives in form.html in script tags
             templateUrl: 'sidebarModalContent.html',
             controller: SidebarModalCtrl,
-            //grab assets json from MainCtrl and passes to SidebarModalCtrl
+            // pass assets json from MainCtrl to SidebarModalCtrl - scoping
             // **note..maybe want to JUST grab sidebar_images json..maybe cahnge this?
             // **note...could also consider putting sidebar html in json file...bad practice?
             resolve: {
@@ -41,6 +41,11 @@ function MainCtrl($scope, $http, $modal, $log) {
                 $scope.selected = [];
                 $scope.selected.push(selectedAsset);
             }
+            // This emits an event (addSidebar)
+            // event picked up by our directive (addSidebarItem) in app.js
+            // And then adds the selected item to the sidebar
+            $scope.$emit('addSidebar');
+
         }, function () {
             // on modal cancel() from SidebarModalCtrl
             // **note not sure if we need anything here...this needs to be removed

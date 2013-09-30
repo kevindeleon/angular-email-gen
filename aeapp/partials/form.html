@@ -35,6 +35,11 @@
                 </div>
                 <div class="modal-body">
                     <select ng-model="selected.asset" ng-options="sidebar_image.name for sidebar_image in assets.sidebar_images"></select><br />
+                    <label>
+                        Enter a url for your image:
+                        <input type="text" ng-model="selected.asset.sidebar_url" placeholder="ex: http://loyno.edu/test" /><br />
+                    </label>
+                    <textarea ng-model="selected.asset.sidebar_text" placeholder="Enter a description" /></textarea><br />
                     Selected: <b>{{selected.asset}}</b>
                 </div>
                 <div class="modal-footer">
@@ -153,10 +158,7 @@
                                                                                                                 {{assets.video_text}}<br/>
                                                                                                                 <a href="https://secure.loyno.edu/apply/application?utm_source=general&utm_medium=email&utm_campaign=enrollment" style="outline:none; border:none;"><img style=" border:0; margin-top:15px;" src="{{assets.button_image}}" alt="{{assets.button_image_alt}}"/></a><br/>
                                                                                                                 <img style="outline:none; border:none;" src="http://www.loyno.edu/emails-newsletters/admissions/enrollment/questions.jpg" alt="Questions? Call 800.4.LOYOLA"/><br/>
-                                                                                                                <div id="whatever">
-                                                                                                                    <a href="http://youvisit.com/tour-loyno.html?utm_source=general&utm_medium=email&utm_campaign=enrollment"><img style="outline:none; border:0;" src="http://www.loyno.edu/emails-newsletters/admissions/enrollment/find-your-place.jpg" alt="Take a Tour"/></a><br/>
-                                                                                                                    Visit us, or take a virtual tour of our campus. <a style="color:#990000;" href="http://youvisit.com/tour-loyno.html?utm_source=general&utm_medium=email&utm_campaign=enrollment">Take a tour &raquo;</a>
-                                                                                                                </div>  
+                                                                                                                <add-sidebar-item></add-sidebar-item> 
                                                                                                                 <br/>
                                                                                                                 <a href="https://www.facebook.com/applytoloyola?utm_source=general&utm_medium=email&utm_campaign=enrollment"><img style="outline:none; border:0; border:none; margin-top:15px;" src="http://www.loyno.edu/emails-newsletters/admissions/general/facebook.jpg" alt="Find us on Facebook"/></a>
                                                                                                             </div>
