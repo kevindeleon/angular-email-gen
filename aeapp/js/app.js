@@ -4,18 +4,11 @@
  * contains application initialization code
  * initializes routes and declares dependencies
  */
-// angular.
-//     module('emailGen', ['ui.bootstrap']).
-//     config(['$routeProvider', function($routeProvider) {
-//         $routeProvider.
-//         when('/', { templateUrl: 'partials/form.html', controller: MainCtrl }).
-//         when('/about', { templateUrl: 'partials/about.html', controller: AboutCtrl }).
-//         otherwise({ redirectTo: '/' });
-// }]);
 
+// initialize app module
 var emailGen = angular.module('emailGen', ['ui.bootstrap']);
 
-// Configuring routes
+// configure application routes
 emailGen.config(function($routeProvider) {
     $routeProvider.
         when('/', { templateUrl: 'partials/form.html', controller: MainCtrl }).
@@ -32,7 +25,7 @@ emailGen.config(function($routeProvider) {
 emailGen.directive('addSidebarItem', function(){
     return {
         restrict: 'E',
-        template: '<div ng-repeat="sidebarItem in selected" id="{{sidebarItem.id}}"><a href="{{sidebarItem.sidebar_url}}"><img src="{{sidebarItem.url}}" alt="{{sidebarItem.alt}}" /></a><br />{{sidebarItem.sidebar_text}}</div>',
+        template: '<div ng-repeat="sidebarItem in selected" id="{{sidebarItem.id}}"><a href="{{sidebarItem.sidebar_url}}"><img src="{{sidebarItem.url}}" alt="{{sidebarItem.alt}}" /></a><br />{{sidebarItem.sidebar_text}}<br /></div>',
         // link: function(scope, element, attrs) {
         //     element.css({'font-weight' : 'bold', 'text-decoration' : "underline"});
         
@@ -47,18 +40,4 @@ emailGen.directive('addSidebarItem', function(){
         //     });
         // }
     }
-
-    // return function(scope, element, attrs) {
-    //     element.css({'font-weight' : 'bold', 'text-decoration' : "underline"});
-        
-    //     scope.$on('addSidebar', function() {
-    //         if(element.hasClass('red')) {
-    //             element.removeClass('red');
-    //             element.addClass('blue');
-    //         } else {
-    //             element.removeClass('blue');
-    //             element.addClass('red');
-    //         }
-    //     });
-    // }
 });

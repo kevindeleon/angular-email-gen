@@ -44,7 +44,8 @@ function MainCtrl($scope, $http, $modal, $log) {
             // This emits an event (addSidebar)
             // event picked up by our directive (addSidebarItem) in app.js
             // And then adds the selected item to the sidebar
-            $scope.$emit('addSidebar');
+            // **note this may not be neccessary
+            // $scope.$emit('addSidebar');
 
         }, function () {
             // on modal cancel() from SidebarModalCtrl
