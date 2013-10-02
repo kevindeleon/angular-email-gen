@@ -1,4 +1,5 @@
 {
+    "sources" : ["css","chn","cmfa","cob","law","music","masscomm"],
     "buttons" : [
         {
             "id" : "apply-button",

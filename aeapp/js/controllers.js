@@ -6,9 +6,10 @@ function MainCtrl($scope, $http, $modal, $log) {
         $scope.assets.header_image = $scope.assets.header_images[0].url;
         $scope.assets.header_image_alt = $scope.assets.header_images[0].alt;
 
-        // set default video image as first in array and also default alt
+        // set default video image as first in array and also default alt and text
         $scope.assets.video_image = $scope.assets.video_images[0].url;
         $scope.assets.video_image_alt = $scope.assets.video_images[0].alt;
+        $scope.assets.video_text = "Placeholder text for video feature";
 
         // set default button image as first in array and also default alt
         $scope.assets.button_image = $scope.assets.buttons[0].url;
@@ -41,11 +42,6 @@ function MainCtrl($scope, $http, $modal, $log) {
                 $scope.selected = [];
                 $scope.selected.push(selectedAsset);
             }
-            // This emits an event (addSidebar)
-            // event picked up by our directive (addSidebarItem) in app.js
-            // And then adds the selected item to the sidebar
-            // **note this may not be neccessary
-            // $scope.$emit('addSidebar');
 
         }, function () {
             // on modal cancel() from SidebarModalCtrl
@@ -54,6 +50,9 @@ function MainCtrl($scope, $http, $modal, $log) {
         });
     }
 
+    /**
+     * Removes a sidebar item created by modal form
+     */
     $scope.removeSidebarItem = function(index) {
         $scope.selected.splice(index, 1);
     }
@@ -88,6 +87,7 @@ function NavCtrl ($scope, $location) {
 }
 
 // Loads any particulars into the About view
+// Not truly neccessary as all about content is static right now
 function AboutCtrl($scope) {
     $scope.test = "about test";
 }
