@@ -17,27 +17,13 @@ emailGen.config(function($routeProvider) {
 });    
 
 /**
- * The addSidebarItem directive.  Called by the the $emit method in our modal
- * return function. It will then add a sidebar element to the sidebar. 
+ * The addSidebarItem directive.
  * 
- * @return function
+ * @return object
  */
 emailGen.directive('addSidebarItem', function(){
     return {
         restrict: 'E',
         template: '<div ng-repeat="sidebarItem in selected" id="{{sidebarItem.id}}"><a href="{{sidebarItem.sidebar_url}}"><img src="{{sidebarItem.url}}" alt="{{sidebarItem.alt}}" /></a><br />{{sidebarItem.sidebar_text}}<br /></div>',
-        // link: function(scope, element, attrs) {
-        //     element.css({'font-weight' : 'bold', 'text-decoration' : "underline"});
-        
-        //     scope.$on('addSidebar', function() {
-        //         if(element.hasClass('red')) {
-        //             element.removeClass('red');
-        //             element.addClass('blue');
-        //         } else {
-        //             element.removeClass('blue');
-        //             element.addClass('red');
-        //         }
-        //     });
-        // }
     }
 });

@@ -1,3 +1,23 @@
 body {
     padding-top: 20px;
 }
+
+#sidbar_item_cont {
+    overflow: hidden;
+}
+
+.sidebar_selected_item {
+    position: relative;
+    float: left;
+    width: 300px;
+    height: 200px;
+    margin: 15px 0 15px 0;
+}
+
+.sidebar_selected_item img {
+    border: 1px solid #333;
+}
+
+.sidebar_selected_item p {
+    margin: 0 0 3px 0;
+}

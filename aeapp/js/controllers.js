@@ -53,6 +53,10 @@ function MainCtrl($scope, $http, $modal, $log) {
             $log.info('Modal dismissed at: ' + new Date());
         });
     }
+
+    $scope.removeSidebarItem = function(index) {
+        $scope.selected.splice(index, 1);
+    }
 }
 
 function SidebarModalCtrl($scope, $modalInstance, assets) {
