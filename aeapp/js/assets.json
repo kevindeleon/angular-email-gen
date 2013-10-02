@@ -106,20 +106,23 @@
         {
             "id" : "financial-vid",
             "alt" : "Financial Management",
-            "name" : "cob-video.jpg",
-            "url" : "http://emailapp.site/aeapp/email-assets/video-images/cob-video.jpg"
+            "name" : "Student-Management Investment Fund",
+            "url" : "http://emailapp.site/aeapp/email-assets/video-images/cob-video.jpg",
+            "video_link" : "http://apply.loyno.edu/admissions-video-archives&v=70113371"
         },
         {
             "id" : "culture-vid",
             "alt" : "Play Culture",
-            "name" : "food-music-culture-video.jpg",
-            "url" : "http://emailapp.site/aeapp/email-assets/video-images/food-music-culture-video.jpg"
+            "name" : "Loyola Class of 2013",
+            "url" : "http://emailapp.site/aeapp/email-assets/video-images/food-music-culture-video.jpg",
+            "video_link" : "http://apply.loyno.edu/admissions-video-archives&v=65323751"
         },
         {
             "id" : "bateman-vid",
             "alt" : "Play Bateman Video",
-            "name" : "loyola-bateman-team.jpg",
-            "url" : "http://emailapp.site/aeapp/email-assets/video-images/loyola-bateman-team.jpg"
+            "name" : "Bateman Team",
+            "url" : "http://emailapp.site/aeapp/email-assets/video-images/loyola-bateman-team.jpg",
+            "video_link" : "http://apply.loyno.edu/admissions-video-archives&v=67212962"
         }
     ]
 }
