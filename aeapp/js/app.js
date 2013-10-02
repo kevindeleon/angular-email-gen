@@ -24,6 +24,6 @@ emailGen.config(function($routeProvider) {
 emailGen.directive('addSidebarItem', function(){
     return {
         restrict: 'E',
-        template: '<div ng-repeat="sidebarItem in selected" id="{{sidebarItem.id}}"><a href="{{sidebarItem.sidebar_url}}?utm_source={{assets.source}}&utm_medium=email&utm_campaign=enrollment"><img src="{{sidebarItem.url}}" alt="{{sidebarItem.alt}}" /></a><br />{{sidebarItem.sidebar_text}}<br /></div>',
+        template: '<div ng-repeat="sidebarItem in selected" id="{{sidebarItem.id}}"><a href="{{sidebarItem.sidebar_url}}?utm_source={{assets.source}}&utm_medium=email&utm_campaign=enrollment"><img src="{{sidebarItem.url}}" alt="{{sidebarItem.alt}}" style="outline:none; border:0;" /></a><br />{{sidebarItem.sidebar_text}}<br /><br /></div>',
     }
 });
