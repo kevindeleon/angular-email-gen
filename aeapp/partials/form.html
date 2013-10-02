@@ -61,6 +61,29 @@
             </script>
         </accordion-group>
     </accordion>
+
+    <button id="get-code" class="btn btn-primary">Get Code</button>
+    <button id="start-over" class="btn btn-warning" style="display: none;">Start Over</button><br /><br />
+
+    <script type="text/javascript">
+    $('#get-code').click(function(event) {
+        var $clone = $('.mailer-design-option-backdrop').clone();
+        var html = $clone[0].outerHTML;
+
+        $('#code-text').val(
+            $('#code-text').val().replace(/<grasshopper>/, html)
+        );
+
+        $('#get-code').attr("disabled", "disabled");
+        $('.mailer-design-option-backdrop').hide();
+        $('#code-text, #start-over').show();
+    });
+
+    $('#start-over').click(function(event) {
+        window.location.href = "";
+    });
+    </script>
+
     <div class="mailer-design-option-backdrop" data-mailer-styles="background" style="margin: 0;background-color: #9bb7c0">
         <table border="0" cellpadding="0" cellspacing="0" class="mailer-design-option-backdrop" data-mailer-color="#9bb7c0, #EDEAE2, #a1350f" data-mailer-styles="background" style="font-family: Helvetica;font-size: 12px;margin: 0;background-color: #660000" width="100%">
             <tr>
@@ -235,28 +258,6 @@
         </table>
     </div>
     <br /><br />
-    
-    <button id="get-code" class="btn btn-primary">Get Code</button>
-    <button id="start-over" class="btn btn-warning" style="display: none;">Start Over</button><br /><br />
-
-    <script type="text/javascript">
-    $('#get-code').click(function(event) {
-        var $clone = $('.mailer-design-option-backdrop').clone();
-        var html = $clone[0].outerHTML;
-
-        $('#code-text').val(
-            $('#code-text').val().replace(/<grasshopper>/, html)
-        );
-
-        $('#get-code').attr("disabled", "disabled");
-        $('.mailer-design-option-backdrop').hide();
-        $('#code-text, #start-over').show();
-    });
-
-    $('#start-over').click(function(event) {
-        window.location.href = "";
-    });
-    </script>
 
     <textarea id="code-text" style="width: 940px; padding: 0; margin: 0 0 40px 0; height: 500px; display: none;">
     <!DOCTYPE html>
