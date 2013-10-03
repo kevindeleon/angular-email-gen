@@ -84,6 +84,34 @@ function MainCtrl($scope, $http, $modal, $log) {
     $scope.removeSidebarItem = function(index) {
         $scope.selected.splice(index, 1);
     }
+
+    // jquery get code button click functionality
+    $('#get-code').click(function(event) {
+            // clone populated mailer div
+            var $clone = $('.mailer-design-option-backdrop').clone();
+            
+            // grab html including wrapper
+            var html = $clone[0].outerHTML;
+
+            // sesarch through value of textarea for grasshopper and replace with cloned html
+            $('#code-text').val(
+                $('#code-text').val().replace(/<grasshopper>/, html)
+            );
+
+            // disable button
+            $('#get-code').attr("disabled", "disabled");
+            
+            //hide the preview div
+            $('.mailer-design-option-backdrop').hide();
+
+            // show textarea containing HTML, and show start over button
+            $('#code-text, #start-over').show();
+    });
+
+    // jquery start over click button functionality
+    $('#start-over').click(function(event) {
+        window.location.href = "";
+    });
 }
 
 function SidebarModalCtrl($scope, $modalInstance, assets) {

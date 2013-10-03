@@ -62,34 +62,6 @@
     <button id="get-code" class="btn btn-primary">Get Code</button>
     <button id="start-over" class="btn btn-warning" style="display: none;">Start Over</button><br /><br />
 
-    <script type="text/javascript">
-        $('#get-code').click(function(event) {
-            // clone populated mailer div
-            var $clone = $('.mailer-design-option-backdrop').clone();
-            
-            // grab html including wrapper
-            var html = $clone[0].outerHTML;
-
-            // sesarch through value of textarea for grasshopper and replace with cloned html
-            $('#code-text').val(
-                $('#code-text').val().replace(/<grasshopper>/, html)
-            );
-
-            // disable button
-            $('#get-code').attr("disabled", "disabled");
-            
-            //hide the preview div
-            $('.mailer-design-option-backdrop').hide();
-
-            // show textarea containing HTML, and show start over button
-            $('#code-text, #start-over').show();
-        });
-
-        $('#start-over').click(function(event) {
-            window.location.href = "";
-        });
-    </script>
-
     <div class="mailer-design-option-backdrop" data-mailer-styles="background" style="margin: 0;background-color: #9bb7c0">
         <table border="0" cellpadding="0" cellspacing="0" class="mailer-design-option-backdrop" data-mailer-color="#9bb7c0, #EDEAE2, #a1350f" data-mailer-styles="background" style="font-family: Helvetica;font-size: 12px;margin: 0;background-color: #660000" width="100%">
             <tr>
