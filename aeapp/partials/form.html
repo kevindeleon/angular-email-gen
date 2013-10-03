@@ -14,16 +14,13 @@
         </accordion-group>
         <accordion-group heading="Choose a video to feature:">
             <label ng-repeat="video_image in assets.video_images">
-                <input type="radio" ng-model="assets.video_image" value="{{video_image.url}}" id="{{video_image.id}}" ng-change="assets.video_image_alt = video_image.alt" />
+                <input type="radio" ng-model="assets.video_image" value="{{video_image.url}}" id="{{video_image.id}}" ng-change="videoChange(video_image)" />
                 <img ng-src="{{video_image.url}}" />
+                {{video_image.name}}
             </label>
+            <br />
             <label>
-                Enter a description for the video:
-                <textarea ng-model="assets.video_text" placeholder="Marketing words rock!" rows="5" cols="400"></textarea>
-            </label>
-            <label>
-                Enter a url for your video:
-                <input type="text" ng-model="assets.video_url" placeholder="ex: http://loyno.edu/test" />
+                <textarea ng-model="assets.video_text" rows="5" cols="400"></textarea>
             </label>
         </accordion-group>
         <accordion-group heading="Choose a call to action:">
@@ -189,7 +186,7 @@
                                                                                                     <td class="mailer-holder" style="padding: 0;background-color: transparent" valign="top">
                                                                                                         <div class="mailer-combo-content mailer-content-block" style="font-size: 12px;line-height: 1.5">
                                                                                                             <div class="mailer-p-div" style="display: block;margin-bottom: 10px;font-size: 12px;line-height: 1.5;font-weight: normal;font-family: Helvetica, Arial, sans-serif;font-size: 14px;color: #3a3a3a;font-family: Helvetica, Arial, sans-serif;font-size: 14px;color: #3a3a3a" align="center">
-                                                                                                                <a href="{{assets.video_url}}?utm_source={{assets.source}}&utm_medium=email&utm_campaign=enrollment"><img style="outline:none; border:0;" src="{{assets.video_image}}" alt="{{assets.video_image_alt}}"/></a><br/>
+                                                                                                                <a href="{{assets.video_image_link}}?utm_source={{assets.source}}&utm_medium=email&utm_campaign=enrollment"><img style="outline:none; border:0;" src="{{assets.video_image}}" alt="{{assets.video_image_alt}}"/></a><br/>
                                                                                                                 {{assets.video_text}}<br/><br />
                                                                                                                 <a href="https://secure.loyno.edu/apply/application?utm_source={{assets.source}}&utm_medium=email&utm_campaign=enrollment" style="outline:none; border:none;"><img style=" border:0;" src="{{assets.button_image}}" alt="{{assets.button_image_alt}}"/></a><br/>
                                                                                                                 <img style="outline:none; border:none;" src="http://www.loyno.edu/emails-newsletters/admissions/enrollment/questions.jpg" alt="Questions? Call 800.4.LOYOLA"/><br/>

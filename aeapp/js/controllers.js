@@ -6,15 +6,24 @@ function MainCtrl($scope, $http, $modal, $log) {
         $scope.assets.header_image = $scope.assets.header_images[0].url;
         $scope.assets.header_image_alt = $scope.assets.header_images[0].alt;
 
-        // set default video image as first in array and also default alt and text
+        // set default video image as first in array and also default alt, text, link, and image
         $scope.assets.video_image = $scope.assets.video_images[0].url;
+        $scope.assets.video_image_link = $scope.assets.video_images[0].video_link;
         $scope.assets.video_image_alt = $scope.assets.video_images[0].alt;
-        $scope.assets.video_text = "Placeholder text for video feature";
+        $scope.assets.video_text = "Enter a description for the video:";
 
         // set default button image as first in array and also default alt
         $scope.assets.button_image = $scope.assets.buttons[0].url;
         $scope.assets.button_image_alt = $scope.assets.buttons[0].alt;
     });
+
+    // video change event fired when different videos are chosen.
+    // Did this because we are changing multiple values on each change
+    // the image src is still contained within the value and tied to the model
+    $scope.videoChange = function (video_image) {
+        $scope.assets.video_image_link = video_image.video_link;
+        $scope.assets.video_image_alt = video_image.alt;
+    }
 
     // initial function fired when modal is opened by "add item" button
     $scope.open = function() {
