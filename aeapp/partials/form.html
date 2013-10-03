@@ -9,13 +9,13 @@
         <accordion-group heading="Choose a header image:">
             <label ng-repeat="header_image in assets.header_images">
                 <input type="radio" ng-model="assets.header_image" value="{{header_image.url}}" id="{{header_image.id}}" ng-change="assets.header_image_alt = header_image.alt" />
-                <img ng-src="{{header_image.url}}" />
+                <img ng-src="{{absolutePath}}{{header_image.url}}" />
             </label>
         </accordion-group>
         <accordion-group heading="Choose a video to feature:">
             <label ng-repeat="video_image in assets.video_images">
                 <input type="radio" ng-model="assets.video_image" value="{{video_image.url}}" id="{{video_image.id}}" ng-change="videoChange(video_image)" />
-                <img ng-src="{{video_image.url}}" />
+                <img ng-src="{{absolutePath}}{{video_image.url}}" />
                 {{video_image.name}}
             </label>
             <br />
@@ -26,14 +26,14 @@
         <accordion-group heading="Choose a call to action:">
             <label ng-repeat="button in assets.buttons">
                 <input type="radio" ng-model="assets.button_image" value="{{button.url}}" id="{{button.id}}" ng-change="assets.button_image_alt = button.alt" />
-                <img ng-src="{{button.url}}" />
+                <img ng-src="{{absolutePath}}{{button.url}}" />
             </label>
         </accordion-group>
         <accordion-group heading="Create additional sidebar items:">
             <button class="btn" ng-click="open()">Add Item</button>
             <div id="sidbar_item_cont">
                 <div ng-repeat="sidebar_item in selected" class="sidebar_selected_item" id="{{sidebar_item.id}}">
-                    <p><img src="{{sidebar_item.url}}" alt="{{sidebar_item.alt}}" /></p>
+                    <p><img ng-src="{{absolutePath}}{{sidebar_item.url}}" alt="{{sidebar_item.alt}}" /></p>
                     <p>Description: {{sidebar_item.sidebar_text}}</p>
                     <p>Image Link: {{sidebar_item.sidebar_url}}</p>
                     <button class="btn btn-primary" data-ng-click="removeSidebarItem($index)">Remove Item</button>
@@ -47,7 +47,7 @@
                     <select ng-model="selected.asset" ng-options="sidebar_image.name for sidebar_image in assets.sidebar_images"></select><br />
                     <label>
                         Enter a url for your image:
-                        <input type="text" ng-model="selected.asset.sidebar_url" placeholder="ex: http://loyno.edu/test" /><br />
+                        <input type="text" ng-model="selected.asset.sidebar_url" placeholder="ex: http://test.com/test" /><br />
                     </label>
                     <textarea ng-model="selected.asset.sidebar_text" placeholder="Enter a description" /></textarea><br />
                 </div>
@@ -63,22 +63,31 @@
     <button id="start-over" class="btn btn-warning" style="display: none;">Start Over</button><br /><br />
 
     <script type="text/javascript">
-    $('#get-code').click(function(event) {
-        var $clone = $('.mailer-design-option-backdrop').clone();
-        var html = $clone[0].outerHTML;
+        $('#get-code').click(function(event) {
+            // clone populated mailer div
+            var $clone = $('.mailer-design-option-backdrop').clone();
+            
+            // grab html including wrapper
+            var html = $clone[0].outerHTML;
 
-        $('#code-text').val(
-            $('#code-text').val().replace(/<grasshopper>/, html)
-        );
+            // sesarch through value of textarea for grasshopper and replace with cloned html
+            $('#code-text').val(
+                $('#code-text').val().replace(/<grasshopper>/, html)
+            );
 
-        $('#get-code').attr("disabled", "disabled");
-        $('.mailer-design-option-backdrop').hide();
-        $('#code-text, #start-over').show();
-    });
+            // disable button
+            $('#get-code').attr("disabled", "disabled");
+            
+            //hide the preview div
+            $('.mailer-design-option-backdrop').hide();
 
-    $('#start-over').click(function(event) {
-        window.location.href = "";
-    });
+            // show textarea containing HTML, and show start over button
+            $('#code-text, #start-over').show();
+        });
+
+        $('#start-over').click(function(event) {
+            window.location.href = "";
+        });
     </script>
 
     <div class="mailer-design-option-backdrop" data-mailer-styles="background" style="margin: 0;background-color: #9bb7c0">
@@ -90,7 +99,7 @@
                             <td align="center" valign="top">
                                 <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica;font-size: 12px" width="100%">
                                     <tr>
-                                        <td align="left" class="mobile-hide" valign="top" width="1"><img border="0" height="15" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="1"></td>
+                                        <td align="left" class="mobile-hide" valign="top" width="1"><img border="0" height="15" ng-src="{{absolutePath}}/email-assets/spacer.gif" style="display:block" width="1"></td>
                                     </tr>
 
                                     <tr>
@@ -108,7 +117,7 @@
                                                                                     <div class="mailer-p-div" style="font-size: inherit">
                                                                                         
                                                                                         <!--THE HEADER IMAGE-->
-                                                                                        <a style="color: #660000; outline:none;" href="http://www.loyno.edu?utm_source={{assets.source}}&utm_medium=email&utm_campaign=enrollment" target="_blank"><img class="mobile-width-nopad" style="display:block; line-height:0; outline:none; border:none;" src="{{assets.header_image}}" alt="{{assets.header_image_alt}}" /></a>
+                                                                                        <a style="color: #660000; outline:none;" href="http://www.test.com?utm_source={{assets.source}}&utm_medium=email&utm_campaign=test" target="_blank"><img class="mobile-width-nopad" style="display:block; line-height:0; outline:none; border:none;" ng-src="{{absolutePath}}{{assets.header_image}}" alt="{{assets.header_image_alt}}" /></a>
                                                                                         <!--/THE HEADER IMAGE-->
                                                                                         
                                                                                     </div>
@@ -128,11 +137,11 @@
                                         <td align="left" valign="top">
                                             <table border="0" cellpadding="0" cellspacing="0" class="mobile-width-nopad" style="font-family: Helvetica;font-size: 12px" width="670">
                                                 <tr>
-                                                    <td align="left" bgcolor="#ffffff" class="mobile-hide" valign="top" width="25"><img border="0" height="1" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="25"></td>
+                                                    <td align="left" bgcolor="#ffffff" class="mobile-hide" valign="top" width="25"><img border="0" height="1" ng-src="{{absolutePath}}/email-assets/spacer.gif" style="display:block" width="25"></td>
                                                     <td align="left" bgcolor="#FFFFFF" valign="top">
                                                         <table border="0" cellpadding="0" cellspacing="0" class="mobile-width" style="font-family: Helvetica;font-size: 12px" width="612">
                                                             <tr>
-                                                                <td align="left" bgcolor="#FFFFFF" class="mobile-hide" valign="top" width="1"><img border="0" height="15" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="1"></td>
+                                                                <td align="left" bgcolor="#FFFFFF" class="mobile-hide" valign="top" width="1"><img border="0" height="15" ng-src="{{absolutePath}}/email-assets/spacer.gif" style="display:block" width="1"></td>
                                                             </tr>
 
                                                             <tr>
@@ -175,7 +184,7 @@
                                                                             </td>
                                                                             
                                                                             <!-- Sidebar!! -->
-                                                                            <td align="left" bgcolor="#ffffff" class="mobile-hide" valign="top" width="4%"><img border="0" height="1" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="4%"></td>
+                                                                            <td align="left" bgcolor="#ffffff" class="mobile-hide" valign="top" width="4%"><img border="0" height="1" ng-src="{{absolutePath}}/email-assets/spacer.gif" style="display:block" width="4%"></td>
                                                                             <td class="mailer-layout-column-sidebar mailer-design-option-right-sidebar" data-mailer-styles="background,border-left,border-right" style="background-color: transparent" valign="top" width="24%">
                                                                                 <table border="0" cellpadding="0" cellspacing="0" class="mailer-block-outer" id="block_jrsfirzv" style="font-family: Helvetica;font-size: 12px" width="100%">
 
@@ -186,14 +195,14 @@
                                                                                                     <td class="mailer-holder" style="padding: 0;background-color: transparent" valign="top">
                                                                                                         <div class="mailer-combo-content mailer-content-block" style="font-size: 12px;line-height: 1.5">
                                                                                                             <div class="mailer-p-div" style="display: block;margin-bottom: 10px;font-size: 12px;line-height: 1.5;font-weight: normal;font-family: Helvetica, Arial, sans-serif;font-size: 14px;color: #3a3a3a;font-family: Helvetica, Arial, sans-serif;font-size: 14px;color: #3a3a3a" align="center">
-                                                                                                                <a href="{{assets.video_image_link}}?utm_source={{assets.source}}&utm_medium=email&utm_campaign=enrollment"><img style="outline:none; border:0;" src="{{assets.video_image}}" alt="{{assets.video_image_alt}}"/></a><br/>
+                                                                                                                <a href="{{assets.video_image_link}}?utm_source={{assets.source}}&utm_medium=email&utm_campaign=test"><img style="outline:none; border:0;" ng-src="{{absolutePath}}{{assets.video_image}}" alt="{{assets.video_image_alt}}"/></a><br/>
                                                                                                                 {{assets.video_text}}<br/><br />
-                                                                                                                <a href="https://secure.loyno.edu/apply/application?utm_source={{assets.source}}&utm_medium=email&utm_campaign=enrollment" style="outline:none; border:none;"><img style=" border:0;" src="{{assets.button_image}}" alt="{{assets.button_image_alt}}"/></a><br/>
-                                                                                                                <img style="outline:none; border:none;" src="http://www.loyno.edu/emails-newsletters/admissions/enrollment/questions.jpg" alt="Questions? Call 800.4.LOYOLA"/><br/>
+
+                                                                                                                <a href="http://test.com/test?utm_source={{assets.source}}&utm_medium=email&utm_campaign=test"><img style="outline:none; border:0;" ng-src="{{absolutePath}}{{assets.button_image}}" alt="{{assets.button_image_alt}}"/></a><br/><br />
 
                                                                                                                 <add-sidebar-item></add-sidebar-item> 
                                                                                                                 
-                                                                                                                <a href="https://www.facebook.com/applytoloyola?utm_source={{assets.source}}&utm_medium=email&utm_campaign=enrollment"><img style="outline:none; border:0; border:none;" src="http://www.loyno.edu/emails-newsletters/admissions/general/facebook.jpg" alt="Find us on Facebook"/></a>
+                                                                                                                <a href="https://www.facebook.com/?utm_source={{assets.source}}&utm_medium=email&utm_campaign=test"><img style="outline:none; border:0; border:none;" src="{{absolutePath}}/email-assets/facebook.jpg" alt="Find us on Facebook"/></a>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                     </td>
@@ -211,13 +220,13 @@
                                                             </tr>
 
                                                             <tr>
-                                                                <td align="left" bgcolor="#FFFFFF" class="mobile-hide" valign="top" width="1"><img border="0" height="15" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="1" /></td>
+                                                                <td align="left" bgcolor="#FFFFFF" class="mobile-hide" valign="top" width="1"><img border="0" height="15" ng-src="{{absolutePath}}/email-assets/spacer.gif" style="display:block" width="1" /></td>
                                                             </tr>
                                                         </table>
                                                     </td>
 
 
-                                                    <td align="left" bgcolor="#ffffff" class="mobile-hide" valign="top" width="29"><img border="0" height="1" src="http://www.loyno.edu/emails-newsletters/admissions/general/spacer.gif" style="display:block" width="29" /></td>
+                                                    <td align="left" bgcolor="#ffffff" class="mobile-hide" valign="top" width="29"><img border="0" height="1" ng-src="{{absolutePath}}/email-assets/spacer.gif" style="display:block" width="29" /></td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -237,12 +246,12 @@
                         <tr>
                             <td align="center">
                                 <div class="business_rsvp" style="padding: 10px;color: #CC9999;font-size: 10px;font-family: Verdana">
-                                    Loyola University New Orleans 6363 St. Charles Ave., Box 63 | New Orleans, LA 70118 US
+                                    Generica Address 555 Anywhere Ave | New Orleans, LA 70118 US
                                 </div>
 
                                 <div>
                                     <span style="color: #CC9999; font-size: 10px; font-family: Verdana">
-                                        You are receiving this message because you've requested information from Loyola University New Orleans.<br/>If you do not wish to receive further communications, <a style="color:#ffffff;" href="#">unsubscribe</a> here.
+                                        You are receiving this message because you've requested information from Some Company.<br/>If you do not wish to receive further communications, <a style="color:#ffffff;" href="#">unsubscribe</a> here.
                                     </span>
                                 </div>
 

@@ -1,128 +1,104 @@
 {
-    "sources" : ["css","chn","cmfa","cob","law","music","masscomm"],
+    "sources" : ["source1","source2","source3","source4","source5","source6","source7"],
     "buttons" : [
         {
-            "id" : "apply-button",
-            "alt" : "Apply Now",
-            "name" : "apply-now.jpg",
-            "url" : "http://emailapp.site/aeapp/email-assets/buttons/apply-now.jpg"
+            "id" : "side-button-1",
+            "alt" : "Button One",
+            "name" : "side-button1.jpg",
+            "url" : "/email-assets/buttons/side-button1.jpg"
         },
         {
-            "id" : "enroll-button",
-            "alt" : "Enroll Now",
-            "name" : "enroll-now.jpg",
-            "url" : "http://emailapp.site/aeapp/email-assets/buttons/enroll-now.jpg"
+            "id" : "side-button-2",
+            "alt" : "Button 2",
+            "name" : "side-button2.jpg",
+            "url" : "/email-assets/buttons/side-button2.jpg"
         },
         {
-            "id" : "visit-button",
-            "alt" : "Visit Loyola",
-            "name" : "visit-loyola.jpg",
-            "url" : "http://emailapp.site/aeapp/email-assets/buttons/visit-loyola.jpg"
+            "id" : "side-button-3",
+            "alt" : "Button 3",
+            "name" : "side-button3.jpg",
+            "url" : "/email-assets/buttons/side-button3.jpg"
         }
     ],
     "header_images" : [
         {
-            "id" : "havoc-header",
-            "alt" : "Loyola University New Orleans &ndash; Wolfpack",
-            "name" : "admissions-general-havoc-header.jpg",
-            "url" : "http://emailapp.site/aeapp/email-assets/header-images/admissions-general-havoc-header.jpg"
+            "id" : "header-1",
+            "alt" : "Header 1",
+            "name" : "header1.jpg",
+            "url" : "/email-assets/header-images/header1.jpg"
         },
         {
-            "id" : "cob-header",
-            "alt" : "Loyola University New Orleans",
-            "name" : "cob-banner.jpg",
-            "url" : "http://emailapp.site/aeapp/email-assets/header-images/cob-banner.jpg"
+            "id" : "header-2",
+            "alt" : "Header 2",
+            "name" : "header2.jpg",
+            "url" : "/email-assets/header-images/header2.jpg"
         },
         {
-            "id" : "css-header",
-            "alt" : "Loyola University New Orleans",
-            "name" : "css-banner.jpg",
-            "url" : "http://emailapp.site/aeapp/email-assets/header-images/css-banner.jpg"
-        },
-        {
-            "id" : "huns-header",
-            "alt" : "Loyola University New Orleans",
-            "name" : "huns-banner.jpg",
-            "url" : "http://emailapp.site/aeapp/email-assets/header-images/huns-banner.jpg"
+            "id" : "header-3",
+            "alt" : "Header 3",
+            "name" : "header3.jpg",
+            "url" : "/email-assets/header-images/header3.jpg"
         }
     ],
     "sidebar_images" : [
         {
-            "id" : "aasbc-side",
-            "alt" : "AASBC International",
-            "name" : "AASBC International",
-            "url" : "http://emailapp.site/aeapp/email-assets/sidebar-images/aasbc.jpg"
+            "id" : "sidebar-1",
+            "alt" : "Sidebar 1",
+            "name" : "Sidebar 1",
+            "url" : "/email-assets/sidebar-images/sidebar1.jpg"
         },
         {
-            "id" : "cob-academic-side",
-            "alt" : "Academic Programs",
-            "name" : "COB Academic",
-            "url" : "http://emailapp.site/aeapp/email-assets/sidebar-images/cob-academic-programs.jpg"
+            "id" : "sidebar-2",
+            "alt" : "Sidebar 2",
+            "name" : "Sidebar 2",
+            "url" : "/email-assets/sidebar-images/sidebar2.jpg"
         },
         {
-            "id" : "css-academic-side",
-            "alt" : "Academic Programs",
-            "name" : "CSS Academic",
-            "url" : "http://emailapp.site/aeapp/email-assets/sidebar-images/css-academic-programs.jpg"
+            "id" : "sidebar-3",
+            "alt" : "Sidebar 3",
+            "name" : "Sidebar 3",
+            "url" : "/email-assets/sidebar-images/sidebar3.jpg"
         },
         {
-            "id" : "css-centers-side",
-            "alt" : "Centers and Institutes",
-            "name" : "Centers and Institutes",
-            "url" : "http://emailapp.site/aeapp/email-assets/sidebar-images/css-centers-and-institutes.jpg"
+            "id" : "sidebar-4",
+            "alt" : "Sidebar 4",
+            "name" : "Sidebar 4",
+            "url" : "/email-assets/sidebar-images/sidebar4.jpg"
         },
         {
-            "id" : "find-side",
-            "alt" : "Find Your Place at Loyola",
-            "name" : "Find Your Place",
-            "url" : "http://emailapp.site/aeapp/email-assets/sidebar-images/find-your-place.jpg"
+            "id" : "sidebar-5",
+            "alt" : "Sidebar 5",
+            "name" : "Sidebar 5",
+            "url" : "/email-assets/sidebar-images/sidebar5.jpg"
         },
         {
-            "id" : "research-side",
-            "alt" : "Academic Research",
-            "name" : "Huns Research",
-            "url" : "http://emailapp.site/aeapp/email-assets/sidebar-images/huns-academic-research.jpg"
-        },
-        {
-            "id" : "journalism-side",
-            "alt" : "Journalism",
-            "name" : "Journalism",
-            "url" : "http://emailapp.site/aeapp/email-assets/sidebar-images/journalism.jpg"
-        },
-        {
-            "id" : "pr-side",
-            "alt" : "Public Relations",
-            "name" : "Public Relations",
-            "url" : "http://emailapp.site/aeapp/email-assets/sidebar-images/public-relations.jpg"
-        },
-        {
-            "id" : "wpc-side",
-            "alt" : "Walker Percy Center",
-            "name" : "Walker Percy",
-            "url" : "http://emailapp.site/aeapp/email-assets/sidebar-images/walker-percy.jpg"
+            "id" : "sidebar-6",
+            "alt" : "Sidebar 6",
+            "name" : "Sidebar 6",
+            "url" : "/email-assets/sidebar-images/sidebar6.jpg"
         }
     ],
     "video_images" : [
         {
-            "id" : "financial-vid",
-            "alt" : "Financial Management",
-            "name" : "Student-Management Investment Fund",
-            "url" : "http://emailapp.site/aeapp/email-assets/video-images/cob-video.jpg",
-            "video_link" : "http://apply.loyno.edu/admissions-video-archives&v=70113371"
+            "id" : "video-1",
+            "alt" : "Video 1",
+            "name" : "Video 1",
+            "url" : "/email-assets/video-images/video1.jpg",
+            "video_link" : "http://test/video1"
         },
         {
-            "id" : "culture-vid",
-            "alt" : "Play Culture",
-            "name" : "Loyola Class of 2013",
-            "url" : "http://emailapp.site/aeapp/email-assets/video-images/food-music-culture-video.jpg",
-            "video_link" : "http://apply.loyno.edu/admissions-video-archives&v=65323751"
+            "id" : "video-2",
+            "alt" : "Video 2",
+            "name" : "Video 2",
+            "url" : "/email-assets/video-images/video2.jpg",
+            "video_link" : "http://test/video2"
         },
         {
-            "id" : "bateman-vid",
-            "alt" : "Play Bateman Video",
-            "name" : "Bateman Team",
-            "url" : "http://emailapp.site/aeapp/email-assets/video-images/loyola-bateman-team.jpg",
-            "video_link" : "http://apply.loyno.edu/admissions-video-archives&v=67212962"
+            "id" : "video-3",
+            "alt" : "Video 3",
+            "name" : "Video 3",
+            "url" : "/email-assets/video-images/video3.jpg",
+            "video_link" : "http://test/video3"
         }
     ]
 }

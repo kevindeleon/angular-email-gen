@@ -1,4 +1,11 @@
 function MainCtrl($scope, $http, $modal, $log) {
+    // HTML emails require absolute paths to their assets
+    // These variables are to make those a bit more dynamic on different domains
+    // This should allow this app to be dropped in any location as long ass assets
+    // stay in the same folder
+    var subfolder = "/aeapp";
+    $scope.absolutePath = location.protocol + "//" + document.domain + subfolder;
+
     // retrieve data from json file
     $http.get('js/assets.json', {cache:false}).then(function(res){
         $scope.assets = res.data;
