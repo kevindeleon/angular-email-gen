@@ -1,3 +1,14 @@
+/**
+ * controller.js
+ * https://github.com/kevindeleon/angular-email-gen
+ *
+ * Copyright 2013, Kevin deLeon
+ * Licensed under the MIT license.
+ * http://github.com/kevindeleon/angular-email-gen/blob/master/LICENSE 
+ *
+ * Author: Kevin deLeon (http://github.com/kevindeleon)
+ */
+
 function MainCtrl($scope, $http, $modal, $log) {
     // HTML emails require absolute paths to their assets
     // These variables are to make those a bit more dynamic on different domains
