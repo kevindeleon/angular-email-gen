@@ -1,7 +1,12 @@
 /**
  * app.js
  * https://github.com/kevindeleon/angular-email-gen
+ * 
+ * main application level module
  *
+ * contains application initialization code
+ * initializes routes, declares dependencies, directives and services
+ * 
  * Copyright 2013, Kevin deLeon
  * Licensed under the MIT license.
  * http://github.com/kevindeleon/angular-email-gen/blob/master/LICENSE 
@@ -9,13 +14,6 @@
  * Author: Kevin deLeon (http://github.com/kevindeleon)
  */
 
-
-/**
- * main application level module
- *
- * contains application initialization code
- * initializes routes, declares dependencies, creates directives
- */
 
 // initialize app module
 var emailGen = angular.module('emailGen', ['ui.bootstrap']);

@@ -10,10 +10,12 @@
  */
 
 function MainCtrl($scope, $http, $modal, $log) {
-    // HTML emails require absolute paths to their assets
-    // These variables are to make those a bit more dynamic on different domains
-    // This should allow this app to be dropped in any location as long ass assets
-    // stay in the same folder
+    /**
+     * HTML emails require absolute paths to their assets
+     * These variables are to make those a bit more dynamic on different domains
+     * This should allow this app to be dropped in any location as long ass assets
+     * stay in the same folder
+     */
     var subfolder = "/aeapp";
     $scope.absolutePath = location.protocol + "//" + document.domain + subfolder;
 
@@ -35,9 +37,11 @@ function MainCtrl($scope, $http, $modal, $log) {
         $scope.assets.button_image_alt = $scope.assets.buttons[0].alt;
     });
 
-    // video change event fired when different videos are chosen.
-    // Did this because we are changing multiple values on each change
-    // the image src is still contained within the value and tied to the model
+    /**
+     * video change event fired when different videos are chosen.
+     * Did this because we are changing multiple values on each change
+     * the image src is still contained within the value and tied to the model
+     */
     $scope.videoChange = function (video_image) {
         $scope.assets.video_image_link = video_image.video_link;
         $scope.assets.video_image_alt = video_image.alt;
@@ -70,7 +74,6 @@ function MainCtrl($scope, $http, $modal, $log) {
 
         }, function () {
             // on modal cancel() from SidebarModalCtrl
-            // **note not sure if we need anything here...this needs to be removed
             $log.info('Modal dismissed at: ' + new Date());
         });
     }
@@ -84,10 +87,10 @@ function MainCtrl($scope, $http, $modal, $log) {
 }
 
 function SidebarModalCtrl($scope, $modalInstance, assets) {
-    //assets received from MainCtrl resolve
+    // assets received from MainCtrl resolve
     $scope.assets = assets;
 
-    //instantiate selected.asset for use in Modal
+    // instantiate selected.asset for use in Modal
     $scope.selected = {
         asset: null
     };
@@ -111,8 +114,10 @@ function NavCtrl ($scope, $location) {
     };
 }
 
-// Loads any particulars into the About view
-// Not truly neccessary as all about content is static right now
+/**
+ * Loads any particulars into the About view
+ * Not truly neccessary as all about content is static right now
+ */
 function AboutCtrl($scope) {
     $scope.test = "about test";
 }
