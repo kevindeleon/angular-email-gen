@@ -50,8 +50,6 @@ function MainCtrl($scope, $http, $modal, $log) {
             templateUrl: 'sidebarModalContent.html',
             controller: SidebarModalCtrl,
             // pass assets json from MainCtrl to SidebarModalCtrl - scoping
-            // **note..maybe want to JUST grab sidebar_images json..maybe cahnge this?
-            // **note...could also consider putting sidebar html in json file...bad practice?
             resolve: {
                 assets: function() {
                     return $scope.assets;
