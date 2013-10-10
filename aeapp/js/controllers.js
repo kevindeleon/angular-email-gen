@@ -13,7 +13,7 @@ function MainCtrl($scope, $http, $modal, $log) {
     /**
      * HTML emails require absolute paths to their assets
      * These variables are to make those a bit more dynamic on different domains
-     * This should allow this app to be dropped in any location as long ass assets
+     * This should allow this app to be dropped in any location as long as assets
      * stay in the same folder
      */
     var subfolder = "/aeapp";
