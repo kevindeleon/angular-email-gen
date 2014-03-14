@@ -20,7 +20,7 @@ function MainCtrl($scope, $http, $modal, $log) {
     $scope.absolutePath = location.protocol + "//" + document.domain + subfolder;
 
     // retrieve data from json file
-    $http.get('js/assets.json', {cache:false}).then(function(res){
+    $http.get('js/assets.json?cb=' + new Date().getTime(), {cache:false}).then(function(res){
         $scope.assets = res.data;
         // set default banner as first in array and also default alt
         $scope.assets.header_image = $scope.assets.header_images[0].url;
